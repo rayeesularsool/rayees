@@ -1,0 +1,266 @@
+
+(function() {
+    // Dynamic values from page request
+    
+var script = document.getElementById("celtra-script-1");
+if (!script || script.tagName.toLowerCase() !== 'script')
+    throw 'Element with id equal to scriptId does not exist or is not a script.';
+  
+    var runtimeParams = {"tagVersion":"html-standard-7","deviceInfo":{"deviceType":"Desktop","primaryHardwareType":"desktop","mobileDevice":false,"osName":"Windows","osVersion":"10","platform":"DesktopPlatform","platformVersion":null,"browserName":"Chrome","browserVersion":"111.0.0.0","browserRenderingEngine":"WebKit","vendor":null,"model":null},"weather":{"windy":"0","currentCondition":"sunny","apparentTemperature":17.0,"temperature":17.0,"windSpeed":4,"cloudCoverage":0,"conditions":[{"name":"sunny","weight":1}]},"ipCountryCode":"IN","ipRegionCode":null,"ipPrincipalSubdivisionCode":"MP","ipCityGeonameId":null,"ipCity":null,"ipPostalCode":null,"ipLat":23.2654,"ipLng":77.396,"accountId":"967483eb","folderId":"9f384cfe","placementId":"75e91dfd","supplierId":null,"sessionId":"s1678884313x8c513f67fb2e26x80609662","purpose":"live","secure":1,"clientTimestamp":"1678884230.489","clientTimeZoneOffsetInMinutes":-330,"clientIp":"110.227.50.235","gpsLat":null,"gpsLng":null,"language":"en","acceptLanguage":"en-US,en;q=0.9","platformAdvId":null,"platformAdvIdTrackingLimited":null,"userIdentifiers":{},"variantChoices":{"UseNewUnitViewabilityLogic":"oldGeometryWithoutSampling","EventMetadata":"newMeta"},"neustarSegment":null,"authBasis":"1678884313847,452e120d,75e91dfd","authToken":"7260e342f48939a6c13b6f806614f587","customAudiences":{},"derivedAudiences":{},"destinationDefinitions":[{"campaignId":null,"placementId":null,"creativeId":"452e120d","eventName":"urlOpened","reportLabel":"Click - Banner 160x600","destinationUrl":"https://tripadvisoradexpress.com/request-access","destination":{"url":"https://tripadvisoradexpress.com/request-access","clazz":"Fixed"},"impressionUrl":null},{"campaignId":null,"placementId":null,"creativeId":"452e120d","eventName":"urlOpened","reportLabel":"Click -Banner 300x600","destinationUrl":"https://tripadvisoradexpress.com/request-access","destination":{"url":"https://tripadvisoradexpress.com/request-access","clazz":"Fixed"},"impressionUrl":null},{"campaignId":null,"placementId":null,"creativeId":"452e120d","eventName":"urlOpened","reportLabel":"Click - Banner 728x90","destinationUrl":"https://tripadvisoradexpress.com/request-access","destination":{"url":"https://tripadvisoradexpress.com/request-access","clazz":"Fixed"},"impressionUrl":null},{"campaignId":null,"placementId":null,"creativeId":"452e120d","eventName":"urlOpened","reportLabel":"Click - Banner 300x250","destinationUrl":"https://tripadvisoradexpress.com/request-access","destination":{"url":"https://tripadvisoradexpress.com/request-access","clazz":"Fixed"},"impressionUrl":null},{"campaignId":null,"placementId":null,"creativeId":"452e120d","eventName":"urlOpened","reportLabel":"Click - Banner 970x250","destinationUrl":"https://tripadvisoradexpress.com/request-access","destination":{"url":"https://tripadvisoradexpress.com/request-access","clazz":"Fixed"},"impressionUrl":null}],"dynamicContent":[],"moatCustomAttributes":{},"admarvel_format":null,"overrides":{"placementId":"75e91dfd","customAudiences":{},"derivedAudiences":{},"deviceInfo":{"deviceType":"Desktop","primaryHardwareType":"desktop","mobileDevice":false,"osName":"Windows","osVersion":"10","platform":"DesktopPlatform","platformVersion":null,"browserName":"Chrome","browserVersion":"111.0.0.0","browserRenderingEngine":"WebKit","vendor":null,"model":null},"language":"en","ipCountryCode":"IN","ipRegionCode":null,"ipPrincipalSubdivisionCode":"MP","ipCityGeonameId":null,"ipCity":null,"weather":{"windy":"0","currentCondition":"sunny","apparentTemperature":17.0,"temperature":17.0,"windSpeed":4,"cloudCoverage":0,"conditions":[{"name":"sunny","weight":1}]},"clientTimestamp":"1678884230.489","clientTimeZoneOffsetInMinutes":-330},"utSignals":null,"_mraidCheck":null,"fallbackSdk":null,"passthroughParameters":{},"googleMapsClientKey":"AIzaSyA8MYHOcJd3ZAjaIJwAlLhSsQ0JEDIfylg","shouldShowMapsPrompt":false,"pageSkinsHost":null,"pageSkinsPath":null,"stickToPageHeader":null,"externalAdServer":"GoogleAdManager","externalCreativeId":"138410783544","externalCreativeName":null,"externalPlacementId":"47809211","externalPlacementName":null,"externalSiteId":"40769411","externalSiteName":"tripadvisor.in","externalSupplierId":null,"externalSupplierName":null,"externalLineItemId":"6147755249","externalSessionId":null,"externalBundleId":null,"externalCreativeWidth":728,"externalCreativeHeight":90,"externalCampaignId":"3103746220","externalCampaignName":null,"externalAdvertiserId":"56130131","externalDestinationUrl":null,"clickUrl":"https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvAJESJDb2RzgZntjChqVBxm8t6ecO0zTanv_CW5ZrIyGUcfEKTSZsdSqHs0BOXeQJOpKede1bl5BdTzKhGF45OMVbFEwakJQ--mD1i7baNLK6oNPj0Zlg2C-ErZb8Zn-EVU5lzNmxK9BYShQHuaVTucWIZ4Cw_BTc7HS1cAMachc4RVgYTI7Ed0atQCjONs5dqID_zg2Ce7mzebH48f7S2Ipoma5hx9mZD6TNn3zkxYJmE1ep4YJ_LiOznQVWjvg6brLpVf28xvi0uoi2-pqrx1mSz6dPSD1NPfFEtkIdwSTKOqapLXTh4YOLEdRN5ATHZ9uT94A&sai=AMfl-YR0OkegISgO5m6kcGde_nEhxMuDR-C68IPAzTaOH7E_f2w4S5gmlazDwyz1tFkGZYjS9NOKFgegXzMIPe9xDdNfHsTKGwDP9bAHqsTYWdyJgyoWM2YDgEsYVEGpBst79ybTnLp0I5fcs3TDF24Aew&sig=Cg0ArKJSzHfQodhPCiLZEAE&fbs_aeid=[gw_fbsaeid]&urlfix=1&adurl=","useClickAsDestination":null,"scriptId":"celtra-script-1","firehoseUrl":null,"user.rd":"in","user.geo":"297622","user.country":"293860","user.origin":"BHO","user.detail":"0","user.destination":"BOM","clickEvent":"advertiser","clickUrlNeedsDest":null,"ncu":null,"firstPage":1,"dataURIsEnabled":0,"monotypeProjectId":"c46ed090-3671-4163-a85b-b06b4038ae38","iosAdvId":null,"iosAdvIdTrackingLimited":null,"androidAdvId":null,"androidAdvIdTrackingLimited":null,"moatRandom":{"first":921940309,"second":470685774},"skipOffset":null,"_enablePoliteLoading":null,"massProductionPreview":null,"fontSubsetterIsDisabled":null,"_politeImageUrl":null,"_politeClickThrough":null,"sticky":null,"_mopubExt":null,"enabledServices":["contentSharing"],"creativeVariantLockSize":null,"screenIdLock":null,"vastVersion":null,"standalonePreview":null,"campaignExplorer":null,"exportingFirstFrame":null,"exportingFrameRate":null,"exportingVideoAssetBlobHash":null,"country":"US","productCategoryCode":null,"campaignName":"TAE_House Ads_Q42022","agencyId":null,"customPartnerAttributeBrandId":null,"suppressCloseButton":null,"featureFlags":{"accessibility":true},"coppa":"0","externalAudienceIds":"","preferredClickThroughWindow":"new","externalCreativeSize":"728x90","expandDirection":"undefined","widthBreakpoint":"","hostPageLoadId":"06167721171445151"};
+    runtimeParams.overridableClickThroughDestinationUrl = false;
+    runtimeParams.redirectJsClientTimestamp = new Date() / 1000;
+    
+    
+    
+var macros = function (x) {
+    if (x instanceof Array) {
+        return x.map(macros);
+    } else {
+        var macroTags = [
+            ['%%CACHEBUSTER%%', (Math.random()+'').slice(2)]
+,['%ecid!', "138410783544"]
+,['%n', (Math.random()+'').slice(2)]
+,['%s', "https"]
+,['\\{celtraAccountId\\}', "967483eb"]
+,['\\{celtraAgencyId\\}', ""]
+,['\\{celtraAndroidAdvIdTrackingLimitedBoolStr\\}', ""]
+,['\\{celtraAndroidAdvIdTrackingLimited\\}', ""]
+,['\\{celtraAndroidAdvId\\}', ""]
+,['\\{celtraCampaignId:int\\}', "2671267070"]
+,['\\{celtraCampaignId\\}', "9f384cfe"]
+,['\\{celtraCampaignName\\}', "TAE_House%20Ads_Q42022"]
+,['\\{celtraCountryCode\\}', "US"]
+,['\\{celtraCreativeId:int\\}', "1160647181"]
+,['\\{celtraCreativeId\\}', "452e120d"]
+,['\\{celtraCreativeVariant:urlenc\\}', ""]
+,['\\{celtraCreativeVariant\\}', ""]
+,['\\{celtraCustomPartnerAttribute\\[code\\]\\}', ""]
+,['\\{celtraExternalAdServer\\}', "GoogleAdManager"]
+,['\\{celtraExternalAdvertiserId\\}', "56130131"]
+,['\\{celtraExternalBundleId\\}', ""]
+,['\\{celtraExternalCampaignId\\}', "3103746220"]
+,['\\{celtraExternalCampaignName\\}', ""]
+,['\\{celtraExternalCreativeId\\}', "138410783544"]
+,['\\{celtraExternalCreativeName\\}', ""]
+,['\\{celtraExternalDestinationUrl\\}', ""]
+,['\\{celtraExternalLineItemId\\}', "6147755249"]
+,['\\{celtraExternalPlacementId\\}', "47809211"]
+,['\\{celtraExternalPlacementName\\}', ""]
+,['\\{celtraExternalSessionId\\}', ""]
+,['\\{celtraExternalSiteId\\}', "40769411"]
+,['\\{celtraExternalSiteName\\}', "tripadvisor.in"]
+,['\\{celtraExternalSupplierId\\}', ""]
+,['\\{celtraExternalSupplierName\\}', ""]
+,['\\{celtraFeedReportLabel\\}', ""]
+,['\\{celtraIosAdvIdTrackingLimitedBoolStr\\}', ""]
+,['\\{celtraIosAdvIdTrackingLimited\\}', ""]
+,['\\{celtraIosAdvId\\}', ""]
+,['\\{celtraPlacementId:int\\}', "1978211837"]
+,['\\{celtraPlacementId\\}', "75e91dfd"]
+,['\\{celtraPlatformAdvIdTrackingLimited\\}', ""]
+,['\\{celtraPlatformAdvId\\}', ""]
+,['\\{celtraProductCategoryCode\\}', ""]
+,['\\{celtraProto\\}', "https"]
+,['\\{celtraRandom\\}', (Math.random()+'').slice(2)]
+,['\\{celtraSessionId\\}', "s1678884313x8c513f67fb2e26x80609662"]
+,['\\{celtraSupplierId:int\\}', ""]
+,['\\{celtraSupplierId\\}', ""]
+
+        ];
+        return macroTags.reduce(function(str, replacementRule, idx, arr) {
+            return str.replace(new RegExp(replacementRule[0], 'ig'), replacementRule[1] ? replacementRule[1] : '');
+        }, x);
+    }
+};
+
+    // Dynamic values that we do not want to pass forward in urls,
+    // so we look them up on every page request based on runtimeParams
+    var urlOpenedOverrideUrls = {"Click - Banner 160x600":"https://tripadvisoradexpress.com/request-access","Click -Banner 300x600":"https://tripadvisoradexpress.com/request-access","Click - Banner 728x90":"https://tripadvisoradexpress.com/request-access","Click - Banner 300x250":"https://tripadvisoradexpress.com/request-access","Click - Banner 970x250":"https://tripadvisoradexpress.com/request-access"};
+    var storeOpenedOverrideUrls = {};
+    var urlOpenedUrlAppendage = "";
+    var clickThroughDestinationUrl = null;
+
+    // Less dynamic values for payload request
+    var payloadBase = "https://cache-ssl.celtra.com/api/creatives/452e120d/compiled/web.js";
+    var cacheParams = {"v": "10-52634c8825", "secure": 1, "cachedVariantChoices": "W10-", "isPurposePreview": 0, "eventMetadataExperiment": 'newMeta', "inmobi": typeof imraid !== 'undefined' && typeof _im_imai !== 'undefined' ? '1' : '0'};
+
+    
+    var trackers = (function() {
+    return [
+        // 3rd-party tracker (regular)
+function(event) {
+    if (event.name == 'adLoading')
+        return {urls: macros([])};
+
+    if (event.name == 'firstInteraction')
+        return {urls: macros([])};
+
+    if (event.name == 'creativeLoaded')
+        return {urls: macros([])};
+
+    if (event.name == 'creativeRendered')
+        return {urls: macros([])};
+
+    if (event.name == 'viewable00')
+        return {urls: macros([])};
+
+    if (event.name == 'viewable501')
+        return {urls: macros([])};
+
+    if (event.name == 'expandRequested')
+        return {urls: macros([])};
+
+    if (event.name == 'videoPlayInitiated')
+        return {urls: macros([])};
+
+    if (event.clazz === "MasterVideo") {
+        if (event.name == 'videoStart')
+            return {urls: macros([])};
+
+        if (event.name == 'videoFirstQuartile')
+            return {urls: macros([])};
+
+        if (event.name == 'videoMidpoint')
+            return {urls: macros([])};
+
+        if (event.name == 'videoThirdQuartile')
+            return {urls: macros([])};
+
+        if (event.name == 'videoComplete')
+            return {urls: macros([])};
+    }
+
+    if (event.name == 'videoPause')
+        return {urls: macros([])};
+
+    if (event.name == 'videoMuted')
+        return {urls: macros([])};
+
+    if (event.name == 'videoUnmuted')
+        return {urls: macros([])};
+
+    if (event.name == 'custom')
+        return {urls: macros({}[event.label] || [])};
+
+    if (event.name == 'urlOpened')
+        return {urls: macros({}[event.label] || [])};
+
+    if (event.name == 'storeOpened')
+        return {urls: macros({}[event.label] || [])};
+},
+// 3rd-party tracker (click regular)
+function(event) {
+    if (event.name === "urlOpened" && event.label === "Click - Banner 160x600" || event.name === "urlOpened" && event.label === "Click - Banner 300x250" || event.name === "urlOpened" && event.label === "Click - Banner 728x90" || event.name === "urlOpened" && event.label === "Click - Banner 970x250" || event.name === "urlOpened" && event.label === "Click -Banner 300x600")
+        return {urls: macros([]), events: [{name: 'click'}] };
+},
+// Ad server tracker
+function(event) {
+    if (event.name === "urlOpened" && event.label === "Click - Banner 160x600" || event.name === "urlOpened" && event.label === "Click - Banner 300x250" || event.name === "urlOpened" && event.label === "Click - Banner 728x90" || event.name === "urlOpened" && event.label === "Click - Banner 970x250" || event.name === "urlOpened" && event.label === "Click -Banner 300x600")
+        return {urls: macros(["https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvAJESJDb2RzgZntjChqVBxm8t6ecO0zTanv_CW5ZrIyGUcfEKTSZsdSqHs0BOXeQJOpKede1bl5BdTzKhGF45OMVbFEwakJQ--mD1i7baNLK6oNPj0Zlg2C-ErZb8Zn-EVU5lzNmxK9BYShQHuaVTucWIZ4Cw_BTc7HS1cAMachc4RVgYTI7Ed0atQCjONs5dqID_zg2Ce7mzebH48f7S2Ipoma5hx9mZD6TNn3zkxYJmE1ep4YJ_LiOznQVWjvg6brLpVf28xvi0uoi2-pqrx1mSz6dPSD1NPfFEtkIdwSTKOqapLXTh4YOLEdRN5ATHZ9uT94A&sai=AMfl-YR0OkegISgO5m6kcGde_nEhxMuDR-C68IPAzTaOH7E_f2w4S5gmlazDwyz1tFkGZYjS9NOKFgegXzMIPe9xDdNfHsTKGwDP9bAHqsTYWdyJgyoWM2YDgEsYVEGpBst79ybTnLp0I5fcs3TDF24Aew&sig=Cg0ArKJSzHfQodhPCiLZEAE&fbs_aeid=[gw_fbsaeid]&urlfix=1&adurl="]), events: [{name: 'clickReportedToSupplier'}] };
+}
+    ]
+})();
+    trackers.urlsAndEventsFor = function(event) {
+        return this.reduce(function(acc, tracker) {
+            var ue = tracker(event) || {};
+            return {
+                urls:   acc.urls.concat(ue.urls || []),
+                events: acc.events.concat(ue.events || [])
+            };
+        }, {urls: [], events: []});
+    };
+       
+
+    
+var adLoadingEvent = {"name":"adLoading","sessionId":"s1678884313x8c513f67fb2e26x80609662"};
+adLoadingEvent.clientTimestamp = new Date/1000;
+
+trackers.urlsAndEventsFor(adLoadingEvent).urls.forEach(function(url) {
+    // On IE 8+ URLs containing '%' character sometimes throw an error and
+    // stop current JS run loop. One solution  would be to look for that
+    // and replace it with '%25', but we've decided not to modify incoming
+    // URLs, because this issue is really a combination of two external
+    // problems: broken URL on a buggy browser.
+    // https://celtra.atlassian.net/browse/MAB-4476
+    try {
+        var img = new Image;
+        
+        img.src = url;
+    } catch(e) {}
+});
+    
+
+    
+(function () {
+    runtimeParams.protoLoading = {};
+
+    var base64img = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4wEKCBsN103sxwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=";
+
+    runtimeParams.protoLoading.dataLoadStatus = null;
+    // Test if CSP is blocking "data:" source for images
+    var dataImg = new Image();
+    dataImg.onload = function() {
+        runtimeParams.protoLoading.dataLoadStatus = "supported";
+    };
+    dataImg.onerror = function(e) {
+        runtimeParams.protoLoading.dataLoadStatus = "blocked";
+    };
+    dataImg.src = "data:image/png;base64," + base64img;
+
+    runtimeParams.protoLoading.blobLoadStatus = null;
+    // Test if CSP is blocking "blob:" source for images
+    var url = null;
+    try {
+        var binaryImg = atob(base64img);
+        var length = binaryImg.length;
+        var ab = new ArrayBuffer(length);
+        var ua = new Uint8Array(ab);
+        for (var i = 0; i < length; i++) {
+            ua[i] = binaryImg.charCodeAt(i);
+        }
+        var blob = new Blob([ab], {type: 'image/png'});
+        url = URL.createObjectURL(blob);
+    } catch(error) {
+        runtimeParams.protoLoading.blobLoadStatus = "error";
+        runtimeParams.protoLoading.blobErrorMessage = error.name + ': ' + error.message;
+        return;
+    }
+    var blobImg = new Image();
+    blobImg.onload = function() {
+        runtimeParams.protoLoading.blobLoadStatus = "supported";
+        URL.revokeObjectURL(url);
+    };
+    blobImg.onerror = function(e) {
+        runtimeParams.protoLoading.blobLoadStatus = "blocked";
+    };
+    blobImg.src = url;
+})();
+    
+
+    function buildPayloadUrl(payloadBase) {
+      var pairs = [];
+      for (var k in cacheParams)
+          pairs.push(encodeURIComponent(k) + '=' + encodeURIComponent(cacheParams[k]));
+      return payloadBase + '?' + pairs.join('&');
+    }
+
+    var payloadUrl = buildPayloadUrl(payloadBase);
+
+    
+// Request and run payload
+var payload = document.createElement('script');
+payload.src = payloadUrl;
+payload.onload = function() {
+
+runtimeParams.payloadJsClientTimestamp = new Date() / 1000;
+window.celtraDeviceInfoRuntimeParams = runtimeParams.deviceInfo;
+window.celtra.payloads[payloadUrl](script, runtimeParams, trackers, urlOpenedOverrideUrls, storeOpenedOverrideUrls, macros, urlOpenedUrlAppendage, clickThroughDestinationUrl);
+    
+};
+script.parentNode.insertBefore(payload, script.nextSibling);
+    
+    
+    
+    
+})();
+  
